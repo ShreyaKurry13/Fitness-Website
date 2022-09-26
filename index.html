@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN PAGE | GYM</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/ao76d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#icon').click(function(){
+        $('ul').toggleClass('show')
+      });
+    });
+  </script>
+</head> 
+<body>
+  <div id ='login-form' class='login-page'>
+    <div class = "form-box " >
+        <div class = 'button-box ' >
+            <div id ='btn'></div>
+                <button type='button' onclick="leftClick()" class="toggle-btn">LOG IN</button >
+                
+                <button type = ' button ' onclick ="rightClick()" class="toggle-btn">REGISTER</button >
+            </div >
+     
+            <form id ='login' class='input-group-login'>
+                <input type ='text' class ='input-field' placeholder='Username' required>
+                <span></span>
+                <input type ='password' class='input-field' placeholder='Password' required>
+                <br>
+                
+                <input type="checkbox" checked="checked" id="mark">
+                <span class="checkmark"></span>
+                <label for="mark" class="container">Remember Password 
+                </label>
+                <br>
+                <br> 
+                <button type='submit ' class = 'submit-btn'>LOGIN</button> 
+    
+                <hr color="orangered" width="345px">
+            </form> 
+
+            <!-- <form id ='register ' class = 'input-group-register ' >
+              <input type ='text' class ='input-field' placeholder='First Name' required>
+
+              <input type ='text' class='input-field' placeholder='Last Name' required >
+
+              <input type = 'email'class='input
+              field'pla
+              ceholder = ' Email Id '
+              required>
+              
+              <input type = ' password ' class ='input-field' placeholder='Enter Password' required >
+              
+              <input type='password'class='input-field'placeholder='Confirm Password' required></input>
+
+              <input type ='checkbox' class='checkbox'><span>I agree to the terms and conditions</span >
+              
+              <button type='submit' class='submit-btn'>Register</button>
+          </form> -->
+          </div>
+     </div>
+  <section>
+
+  </section>
+</body>
+</html>

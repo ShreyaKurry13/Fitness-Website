@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN PAGE | GYM</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <!-- <script src="https://kit.fontawesome.com/ao76d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#icon').click(function(){
+        $('ul').toggleClass('show')
+      });
+    });
+  </script>  -->
+</head> 
+<body>
+  <div class='login-page'> 
+    <div class = 'button-box' >
+      <div id ='btnMain'></div>
+          <button  type='button' onclick="leftClick();" class="toggle-btn">LOGIN</button >
+          
+          <button type = 'button' onclick ="rightClick();" class="toggle-btn">REGISTER</button >
+      </div >
+    
+    <div class = "form-box">
+        <form id ='form'>
+          <div id="page1">
+            <div class="element">
+              <input type ='text' placeholder='Username' 
+              id="Username" required>
+              <span class="fas fa-user"></span>
+            </div>
+              
+            <div class="element">
+              <input type ='password' id="Password" placeholder='Password' required>
+              <span class="fas fa-lock"></span>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" unchecked="checked" id="mark">
+              <span class="checkmark fas fa-checkbox"></span>
+              <label for="mark" class="element">Remember Password 
+              </label>
+            </div>
+              <button type='submit' class = 'submit-btn' id="btn1">LOGIN</button>
+              <p>──────────OR──────────
+              </p>
+          </div>
+
+          <div id="page2">
+            <div class="element">
+              <input type ='text' placeholder='First Name' required>
+              <span class="fas fa-user"></span>
+            </div>
+            <div class="element">
+              <input type ='text' placeholder='Last Name' required >
+              <span class="fas fa-user"></span>
+            </div>
+            <div class="element">
+              <input type = 'email' placeholder='Email Id' required>
+              <span class="fas fa-envelope"></span>
+            </div>
+            <div class="element">
+              <input type = 'password' placeholder='Enter Password' required>
+              <span class="fas fa-lock"></span>
+            </div>
+            <div class="element">
+              <input type='password'placeholder='Confirm Password' required></input>
+              <span class="fas fa-lock"></span>
+            </div>
+            <div class="checkbox">
+              <input type ='checkbox' unchecked='checked' id="tick">
+              <label for="tick">I agree to the terms and conditions</label >
+            </div>
+            <button type='submit' id="btn2">REGISTER</button>
+          </div>
+        </form> 
+      </div>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getDatabase } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDH8pk-n6ApYexMV_bxOwTdSzkxdlrR8-k",
+        authDomain: "bfit-website.firebaseapp.com",
+        databaseURL: "https://bfit-website-default-rtdb.firebaseio.com",
+        projectId: "bfit-website",
+        storageBucket: "bfit-website.appspot.com",
+        messagingSenderId: "322932971340",
+        appId: "1:322932971340:web:d20deb94e85f4c0a6261e9",
+        measurementId: "G-HT87YED9TT"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth(app);
+      LOGIN.addEventListener('click',(e) => {
+        var Username = document.getElementById('Username').value;
+        var Password = document.getElementById('Password').value;
+
+        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        alert('Login Successfull')
+      // ...
+      })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('errorMessage')
+    // ..
+       });
+    })
+    </script>
+</body>
+</html>

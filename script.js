@@ -20,23 +20,3 @@ function leftClick(){
   document.getElementById("btnMain").style.left = "0";
 }
 
-
-
-// // var btn = document.getElementById("btn");
-
-// // function leftClick() {
-// //   btn.style.left = "1";
-// // }
-// // function rightClick() {
-// //   btn.style.left = "110px";
-// // }
-
-
-// //    var modal = document.getElementById('login-form') ;
-// //    window.onclick = function ( event )
-// //    {
-// //        if ( event.target == modal )
-// //        {
-// //            modal.style.display = " none " ;
-// //        }
-// //    }

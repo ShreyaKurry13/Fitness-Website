@@ -29,7 +29,7 @@ body{
 .button-box{
     width : 210px ;
     margin : 15px auto ;
-	margin-left: 90px;
+	margin-left:subm 90px;
     position : relative;
     border-radius: 30px;
 	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3));
@@ -99,6 +99,7 @@ body{
 	border-bottom: 3px solid #4d7edd ;
 	outline : none ;
 	background : transparent ;
+	font-size: 18px;
 }
 input::placeholder{
 	color: #fff;
@@ -132,7 +133,7 @@ input::placeholder{
 	font-size: 20px;
 	border: none;
 	cursor: pointer;
-	margin-top: 8px;
+	margin-top: 1px;
 }
 #btn:active{
 	transform: scale(1.01);

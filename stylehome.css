@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 :root{
-    --primary-color: #d63031;
-    --secondary-color: #636e72;
-    --font: 'Poppins' , sans-serif;
-}
+    --primary-color: #14213d;
+    --secondary-color: #4d7edd;
+    /* --font: 'Poppins' , sans-serif; */
+} 
 *{
     padding: 0;
     margin: 0;
@@ -13,7 +13,7 @@
 .button-contact{
     padding: .6rem .8rem;
     text-transform: uppercase;
-    font-family: var(--font);
+    font-family: 'Times New Roman', Times, serif;
     background: var(--primary-color);
     color: white;
     font-size: 16px;
@@ -22,6 +22,7 @@
     border: 2px solid var(--primary-color);
     transition: .3s;
     cursor: pointer;
+    margin-top: 25px;
 }
 .btn:hover{
     background: transparent;
@@ -33,15 +34,15 @@
 nav{
     position: fixed;
     width: 100vw;
-    height: 60px;
-    border-top: .5rem solid var(--primary-color);
+    height: 75px;
+    border-top: .5rem solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 999999;
-    background: linear-gradient(rgba(0.0.0.1),rgba(0.0.0.1));
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
-
 .logo{
     display: flex;
     justify-content: center;
@@ -49,59 +50,54 @@ nav{
     height: 55px;
     width: 15%;
     font-weight: 700;
-    background: var(--primary-color);
+    background: transparent;
 }
-
 .logo::before{
     content: "B";
     color: white;
 }
 .logo::after{
     content: "FIT";
-    color: black;
+    color: white;
 }
-
 ul{
     display: flex;
     align-items: center;
     height: 60px;
 }
-
 ul a{
     text-decoration: none;
     color: white;
     margin: 0 2rem;
     text-transform: uppercase;
-    font-family: var(--font);
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 17px;
 }
 ul li{
     list-style: none;
 }
 ul a:hover{
-    color: var(--primary-color);
+    color: #4d7edd;
 }
-
 .banner{
-    background: url('/images/image4.jpg');
+    background: url('/images/home1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 85vh;
 }
-
 .intro{
     position: absolute;
     top: 30%;
     left: 10%;
     color: white;
 }
-
 .intro h2,p{
     display: block;
     width: 60%;
+    color: black;
 }
 .intro h2{
     text-transform: uppercase;
@@ -127,148 +123,3 @@ ul a:hover{
 .card h2{
     text-transform: uppercase;
 }
-
-/* LOGIN PAGE CSS */
-
-/* body{
-	font-family:'Times New Roman', Times, serif;
-	background-image: url(/images/image5.jpg);
-	background-size: cover;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	min-height: 100vh;
-    text-decoration: none;
-	list-style: none;
-	background-size: cover;
-	color: #fff;
-	font-family: 'Times New Roman', Times, serif;
-}
-.login-page{
-	height: 60vh;
-	position: relative;
-	align-items: center;
-	width: 400px;
-	background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8));
-	border-radius: 10px;
-	padding: 10px 20px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-.button-box{
-    width : 210px ;
-    margin : 15px auto ;
-	margin-left: 90px;
-    position : relative;
-    border-radius: 30px;
-	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3));
-	line-height: 40px;
-	align-items: center;
-} 
-#btnMain{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100px ;
-    height: 100%;
-    background: orangered;
-    border-radius: 30px;
-    transition: .5s; 
-}
-.toggle-btn{
-    padding : 12px 25px ;
-	cursor : pointer ;
-    background : transparent;
-	border : 0;
-    outline : none;
-    position : relative;
-	color: #ffff;
-	text-align: center;
-	font-size: 12px;
-	font-weight: bold;
-}
-.login-page .form-box{
-	width: 100%;
-	padding-top: 45px;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
-}
-.form-box #form{
-    width : 200%;
-    position : relative ;
-	display: flex ;
-	margin: auto;
-	transition: 0.2s ease-in-out;
-}
-#page1{
-    margin: auto;
-	width: 100%;
-	margin-top: -50px;
-	margin-bottom: 50px;
-    padding: 15px 20px;
-}
-#page2{
-    margin: auto;
-	width: 100%;
-	margin-top: -60px;
-	margin-bottom: 50px;
-    margin-bottom: 50px;
-    padding: 15px 20px;
-}
-.element{
-	position: relative;
-}
-.element input{
-	width : 90% ;
-	height: 20px;
-	padding: 15px 0;
-	margin : 10px 100px;
-	margin-left: 15px;
-	border-left : 0;
-	border-top : 0 ;
-	border-right : 0 ;
-	border-bottom: 1px solid orangered ;
-	outline : none ;
-	background : transparent ;
-}
-input::placeholder{
-	color: #fff;
-	font-size: 18px;
-}
-.checkbox{
-	display: flex;
-	width : 90% ;
-	padding: 5px 0;
-	margin : 5px 15px;
-	margin-left: 15px;
-}
-.checkbox label{
-	cursor: pointer;
-}
-#btn1{
-	padding: 5px 25px;
-	line-height: 25px;
-	background: orangered;
-	border-radius: 30px;
-	font-size: 20px;
-	border: none;
-	cursor: pointer;
-	margin-top: 15px;
-}
-#btn2{
-	padding: 5px 25px;
-	line-height: 25px;
-	background: orangered;
-	border-radius: 30px;
-	font-size: 20px;
-	border: none;
-	cursor: pointer;
-	margin-top: 8px;
-}
-#btn:active{
-	transform: scale(1.01);
-} 
-#page1 p{
-	margin-top: 15px;
-    padding-left: 20px 20px;
-} */

@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    width: 100vw;
+    min-height: 100vh;
+    background: #4D7EDD;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6));
+    max-width: 800px;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 15px;
+    padding: 0.5rem 1.5rem;
+}
+.left{
+    flex-basis: 50%;
+}
+.right{
+    flex-basis: 50%;
+}
+form{
+    padding: 1rem;
+}
+h3{
+    margin-top: 1rem;
+    color: black; 
+}

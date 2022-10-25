@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 .contactcontainer{
     width: 100%;
@@ -14,7 +14,7 @@
     justify-content: center;
 }
 form{
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3));
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
@@ -26,7 +26,8 @@ form{
 form h3{
     color: white;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    font-size: 22PX;
 }
 
 form input, form textarea{
@@ -42,7 +43,7 @@ form button{
     padding: 15px;
     background: #ff5369;
     color: #14213d;
-    font-size: 18px;
+    font-size: 22px;
     border: 0;
     outline: none;
     cursor: pointer;

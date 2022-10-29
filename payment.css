@@ -15,8 +15,8 @@ header{
 }
 .container{
 	background: white;
-	max-width: 800px;
-	min-height: 500px;
+	max-width: 460px;
+	min-height: 520px;
 	display: flex;
 	justify-content:space-between;
 	align-items: flex-start;
@@ -25,12 +25,14 @@ header{
 }
 .left{
 	flex-basis: 50%;
+	justify-content: center;
 }
-.right{
+/* .right{
 	flex-basis: 50%;
-}
+} */
 form{
-	padding: 1rem;
+	padding: 2.5rem;
+	justify-items: center;
 }
 
 h3{
@@ -60,7 +62,7 @@ form input[type="email"]{
 }
 #zip input[type="number"]{
 	padding: 0.5rem 0.5rem;
-	margin-left: px;	
+	margin-left: 0px;	
 }
 input[type="submit"]{
 	width: 100%;
@@ -69,9 +71,10 @@ input[type="submit"]{
 	color: white;
 	border: none;
 	outline: none;
-	margin-top: 1rem;
+	margin-top: 0.2rem;
 	cursor: pointer;
     font-size: 18px;
+	margin-bottom:15px ;
 }
 
 input[type="submit"]:hover{

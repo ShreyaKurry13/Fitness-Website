@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LOGIN PAGE | BFIT</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loginstyles.css">
   <script src="script.js"></script>
 </head> 
 <body>
@@ -21,25 +21,30 @@
           <div id="page1">
             <div class="element">
               <input type ='email' placeholder='Email Id' 
-              id="Username" required>
+              id="Username" >
               <span class="fas fa-user"></span>
             </div>
               
             <div class="element">
-              <input type ='password' id="Password" placeholder='Password' required>
+              <input type ='password' id="Password" placeholder='Password' >
               <span class="fas fa-lock"></span>
             </div>
 
             <div class="checkbox">
-              <input type="checkbox" unchecked="checked" id="mark">
+              <input type="checkbox" unchecked="checked" id="mark" required>
               <span class="checkmark fas fa-checkbox"></span>
               <label for="mark" class="element">Remember Password 
               </label>
             </div>
-              <button id="btn1" onclick="logIn()">LOGIN</button>
-              <p>──────────OR──────────
-              </p>
+            
+            <button id="btn1">LOGIN</button>
+              <p>──────────OR──────────</p>
+         
+              <img src="/images/google.jpg" id="gimage">
+              <button id="Login" type="button" name="SubmitData">Sign in with Google</button>
+             
           </div>
+              
 
           <div id="page2">
             <div class="element">
@@ -47,7 +52,7 @@
               <span class="fas fa-user"></span>
             </div>
             <div class="element">
-              <input type ='text' placeholder='Last Name' required >
+              <input type ='text' placeholder='Last Name' required>
               <span class="fas fa-user"></span>
             </div>
             <div class="element">
@@ -79,7 +84,7 @@
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithRedirect,getRedirectResult, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
   import { getDatabase,set,ref,update } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
 
 
@@ -100,6 +105,8 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const database = getDatabase(app);
+  const provider = new GoogleAuthProvider(app);
+
 
 
   btn2.addEventListener('click',(e) => {
@@ -135,38 +142,88 @@
     });
  
 
-    // btn1.addEventListener('click',(e) => {
+  btn1.addEventListener('click',(e) => {
 
-    // var email = document.getElementById('Username').value;
-    // var password = document.getElementById('Password').value;
+    var email = document.getElementById('Username').value;
+    var password = document.getElementById('Password').value;
 
-    // signInWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-    //     // Signed in 
-    //     const user = userCredential.user;
-    //     // ...
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
 
-    //     var lgDate = new Date();
-    //     set(ref(database, 'users/' + user.uid), {
-    //       Username: email,
-    //       Password: password
-    //     })
-    //       .then( () => {
-    //         // Data saved successfully!
-    //         alert('User Logged in Successfully');
-    //       })
-    //       .catch((error) => {
-    //         // The write failed...
-    //         alert(error);
-    //       });
-    //   })
-    //   .catch((error) => {
-    //     const errorCode = error.code;
-    //     const errorMessage = error.message;
-    //     alert(errorMessage);
-    //   });
+        var lgDate = new Date();
+        set(ref(database, 'users/' + user.uid), {
+          Username: email,
+          Password: password
+        })
+          .then( () => {
+            // Data saved successfully!
+            alert('User Logged in Successfully');
+            window.location.href = "home.html";
+          })
+          .catch((error) => {
+            // The write failed...
+            alert(error);
+          });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
 
-    // });
+  });
    
+  Login.addEventListener('click',(e) =>{
 
+  //   signInWithRedirect(auth, provider);
+
+  //   getRedirectResult(auth)
+  // .then((result) => {
+  //   // This gives you a Google Access Token. You can use it to access Google APIs.
+  //   const credential = GoogleAuthProvider.credentialFromResult(result);
+  //   const token = credential.accessToken;
+
+  //   // The signed-in user info.
+  //   const user = result.user;
+  // }).catch((error) => {
+  //   // Handle Errors here.
+  //   const errorCode = error.code;
+  //   const errorMessage = error.message;
+  //   // The email of the user's account used.
+  //   const email = error.customData.email;
+  //   // The AuthCredential type that was used.
+  //   const credential = GoogleAuthProvider.credentialFromError(error);
+  //   // ...
+  // });
+
+
+
+  signInWithPopup(auth, provider)
+     .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+
+    alert("Successfully Logged In!!");
+    window.location.href = "home.html";
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+
+    alert(errorMessage);
+    // ...
+  });
+  })
 </script>
+

@@ -123,3 +123,11 @@ ul a:hover{
 .card h2{
     text-transform: uppercase;
 }
+
+.footer{
+    background: #4d7edd;
+    padding: 30px 50px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}

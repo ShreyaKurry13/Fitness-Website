@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>BFIT | HOME</title>
         <link rel="stylesheet" type="text/css" href="homestyles.css">
-        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-        <!-- <link rel="stylesheet" type="text/css" href="style1.css"> -->
+        <link rel="icon" href="/images/logo.png" type="image/icon type" style="height: 30px; width: 20px;">
     </head>
     <body class="bodyhome">
         <header>
             <nav>
                 <h2 class="logo"></h2>
+                <a href="/home.html" class="brand">BFIT</a>
                 <ul>
                     <a href="home.html"><li>Home</li></a>
                     <a href="/service.html"><li>Services</li></a>
@@ -28,29 +28,99 @@
                         of which his body is capable
                     </p>
                     <input type=button onClick="location.href='payment.html'" class="button-contact" value='SUBSCRIBE NOW'>
-                    <!-- <button class="button-contact" onclick="location.href='/p'">SUBSCRIBE NOW</button> -->
                 </div>
             </div> 
         </header>
-        <div class="row">
-            <div class="card" style="color:white; background: var(--secondary-color);">
-            <h2>progression</h2>
-            <p>your only competitor is the one standing in front of the mirror</p>
-            </div>
-            <div class="card" style="background: var(--primary-color);">
-                <h2 style="color:white">WORKOUT</h2>
-                <p style="color: var(--secondary-color);">your only competitor is the one standing in front of the mirror</p>
-            </div>
-            <div class="card" style="color:white; background: var(--secondary-color);">
-                <h2>NUTRITION</h2>
-                <p>your only competitor is the one standing in front of the mirror</p>
-            </div>
+
+        <!-- <section class="home">
+           <img class="image-slide active" src="/images/home1.jpg" alt=""> 
+           <img class="image-slide" src="/images/home2.png" alt=""> 
+           <img class="image-slide" src="/images/home3.png" alt=""> 
+           <img class="image-slide" src="/images/home4.jpg" alt=""> 
+           <img class="image-slide" src="/images/home5.png" alt=""> 
+           <div class="intro">
+            <h2>Be Strong Fitness</h2>
+            <p>It is a shame for a man to grow old
+                without seeing the beauty and strength 
+                of which his body is capable
+            </p>
+            <input type=button onClick="location.href='payment.html'" class="button-contact" value='SUBSCRIBE NOW'>
         </div>
 
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+          </div>
+        </section> -->
+
+
+        <section class="middle">
+            <div class="right">
+            <img src="/images/Progression.jpg" alt="">
+            <div class="right-inside">
+            <h2>PROGRESSION</h2>
+            <p>The principle of progression is the idea that as your body adapts 
+                to your exercise routine, you have to increase the intensity to continue to see enhanced 
+                fitness. This can mean gradually increasing the weight, duration, or intensity of your weight training
+                 in order to see growth. The principle of progression applies to weight training 
+                 and endurance, and can be accomplished through 
+                 increased resistance, frequency, and duration.</p>
+            </div>
+            </div>
+
+            <div class="left">
+                <div class="left-inside">
+                    <h2>WORKOUT</h2>
+                <p>There are many reasons you may not want to exercise in a gym. Some people feel intimidated in a gym environment. Some may struggle with child care or other logistics. Others simply want to create an exercise routine they can do whether at home or while traveling and without access to a gym.
+                What's more difficult is figuring out what to do, especially if you are unaccustomed to regular exercise or are unsure how to put together an effective routine at home that will help you reach your goals. Keep reading to learn strategies and tips for working out at home.</p>
+                </div>
+                <img src="/images/workout.png" alt="">
+            </div>
+
+            <div class="right1">
+                <img src="/images/nutrition.png" alt="">
+                <div class="right1-inside">
+                    <h2>NUTRITION</h2>
+                <p>Diet is a catch-all term that refers to a person’s pattern of eating. Example diets can include vegan, vegetarian, keto, paleo, gluten-free, low-calorie, low-FODMAP, and Mediterranean diets. Each diet has its own set of guidelines that describe what is and isn’t compliant. For example, vegan diets don’t include animal products of any kind and instead are made up of all plant-based foods.Nutrition focuses on different things than nutrition for sports that demand endurance, such as long-distance running or speed skating. Instead, strength training nutrition focuses on enhancing protein intake to build stronger muscles.
+                </p>
+                </div>
+            </div>
+
+        </section>
+        
         <footer>
             <div class="footer">
                 @ Copyright 2022 | All rights reserved
             </div>
         </footer>
+
+        <script type="text/javascript">
+             const btns = document.querySelectorAll(".nav-btn");
+             const slides = document.querySelectorAll(".image-slide");
+
+             var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+            
+                slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+               
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+
+             }
+
+             btns.forEach((btn, i) => {
+                 btn.addEventListener("click", () => {
+                  sliderNav(i);
+                });
+            });
+        </script>
     </body>
 </html>
+
